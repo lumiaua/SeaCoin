@@ -1,4 +1,3 @@
-
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import json
@@ -171,13 +170,13 @@ def callback(call):
     elif call.data == "rating":
         users = load_users()
         top = sorted(users.items(), key=lambda x: x[1]["level"], reverse=True)[:5]
-        text = "🏆 ТОП пиратов"
+        text = "🏆 ТОП пиратов:
+"
         for i, (uid, data) in enumerate(top, 1):
             guild = data["guild"] or "без гильдии"
             text += f"{i}. ID {uid} — Ур. {data['level']} ({guild})
 "
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=get_main_menu())
-    )
 
     elif call.data == "chat":
         bot.send_message(call.message.chat.id, "✉️ Напиши сообщение для пиратского чата:")
