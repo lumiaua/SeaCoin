@@ -172,7 +172,6 @@ def callback(call):
         users = load_users()
         top = sorted(users.items(), key=lambda x: x[1]["level"], reverse=True)[:5]
         text = "🏆 ТОП пиратов"
-"
         for i, (uid, data) in enumerate(top, 1):
             guild = data["guild"] or "без гильдии"
             text += f"{i}. ID {uid} — Ур. {data['level']} ({guild})
