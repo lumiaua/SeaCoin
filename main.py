@@ -3,7 +3,7 @@ import psycopg2
 from telebot import TeleBot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TOKEN = os.getenv("7567294339:AAG1dAC8bvS-caIHhIMLsnbKa1b3mCDiL2c")
 bot = TeleBot(TOKEN)
 
 DATABASE_URL = os.getenv("DATABASE_URL")
