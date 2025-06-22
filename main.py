@@ -174,8 +174,7 @@ def callback(call):
 "
         for i, (uid, data) in enumerate(top, 1):
             guild = data["guild"] or "без гильдии"
-            text += f"{i}. ID {uid} — Ур. {data['level']} ({guild})
-"
+            text += f"{i}. ID {uid} — Ур. {data['level']} ({guild})\n"
         bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=get_main_menu())
 
     elif call.data == "chat":
